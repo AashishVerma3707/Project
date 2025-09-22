@@ -1,0 +1,7 @@
+{
+  "extends": ["react-app", "eslint:recommended"],
+  "rules": {
+    "react/jsx-no-undef": "error",
+    "semi": ["error", "always"]
+  }
+}

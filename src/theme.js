@@ -1,0 +1,148 @@
+import { createTheme } from "@mui/material";
+
+const theme = createTheme({
+  spacing: 2,
+  palette: {
+    primary: {
+      main: "hsl(243, 96%, 9%)",
+    },
+    secondary: {
+      main: "hsl(233, 67%, 56%)",
+    },
+    grey: {
+      main: "#909090",
+    },
+    neutral: {
+      0: "hsl(0, 0%, 100%)",
+      200: "hsl(250, 6%, 84%)",
+      300: "hsl(240, 6%, 70%)",
+      600: "hsl(243, 23%, 30%)",
+      700: "hsl(243, 23%, 24%)",
+      800: "hsl(243, 27%, 20%)",
+      900: "hsl(243, 96%, 9%)",
+    },
+    blue: {
+      500: "hsl(233, 67%, 56%)",
+      700: "hsl(248, 70%, 36%)",
+    },
+    orange: {
+      500: "hsl(28, 100%, 52%)",
+    },
+  },
+  typography: {
+    fontFamily: "'DM Sans', 'Arial', sans-serif",
+
+    h1: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontStyle: "italic",
+      fontWeight: 500,
+      fontSize: "6rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    h2: {
+      fontFamily: "'Bricolage Grotesque', 'Arial', sans-serif",
+      fontWeight: 700,
+      fontSize: "3.25rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    h3: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontWeight: 300,
+      fontSize: "2rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    h4: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontWeight: 700,
+      fontSize: "1.75rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    h5: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontWeight: 500,
+      fontSize: "1.25rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    h6: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontWeight: 500,
+      fontSize: "1.125rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    h7: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontWeight: 400,
+      fontSize: "1rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    h8: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontWeight: 400,
+      fontSize: "0.875rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    h9: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontWeight: 400,
+      fontSize: "0.6rem",
+      lineHeight: 1.2,
+      letterSpacing: 0,
+    },
+    body1: {
+      fontFamily: "'DM Sans', 'Arial', sans-serif",
+      fontWeight: 400,
+      fontSize: "1.125rem",
+      lineHeight: 1.5,
+      letterSpacing: 0,
+    },
+
+    allVariants: {
+      color: "hsl(0, 0%, 100%)",
+    },
+  },
+  customSpacing: {
+    0: "0px",
+    25: "2px",
+    50: "4px",
+    75: "6px",
+    100: "8px",
+    125: "10px",
+    150: "12px",
+    200: "16px",
+    250: "20px",
+    300: "24px",
+    350: "28px",
+    400: "32px",
+    450: "36px",
+    500: "40px",
+    600: "48px",
+    800: "64px",
+    1000: "80px",
+    1200: "96px",
+    1400: "112px",
+    1600: "128px",
+    1800: "140px",
+  },
+  shape: { borderRadius: 8 },
+  radius: {
+    0: "0px",
+    4: "4px",
+    6: "6px",
+    8: "8px",
+    10: "10px",
+    12: "12px",
+    16: "16px",
+    20: "20px",
+    24: "24px",
+    full: "999px",
+  },
+});
+export default theme;
