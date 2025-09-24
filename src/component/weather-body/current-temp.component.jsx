@@ -14,10 +14,13 @@ const CurrentTempComponent = () => {
     <PrimaryContainer
       sx={{
         backgroundImage: `url(${currentTempBgImage})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
         width: "41vw",
-        minHeight:'280px',
-        minWidth:'345px',
+        minHeight: "280px",
         flex: 5,
+        borderRadius: theme.radius[20],
       }}
       justifyContent="center"
       padding={theme.customSpacing[300]}

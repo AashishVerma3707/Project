@@ -4,9 +4,9 @@ import {
   Row,
   SecondaryContainer,
 } from "../../shared-component/shared-styled-component";
+import theme from "../../theme";
 import CustomImage from "../../shared-component/image.component";
 import partlyCloud from "../../assets/images/icon-partly-cloudy.webp";
-import theme from "../../theme";
 
 const HourlyWeatherForcast = () => {
   const hourlyWeatherData = [
@@ -45,10 +45,20 @@ const HourlyWeatherForcast = () => {
   ];
   return (
     <PrimaryContainer
-      sx={{ width: "20vw", maxHeight: "695px" }}
+      sx={{
+        width: "20vw",
+        maxHeight: "695px",
+        maxWidth: "385px",
+        padding: theme.customSpacing[250],
+        borderRadius: theme.radius[20],
+      }}
       rowGap={theme.customSpacing[200]}
     >
-      <Row fullWidth>
+      <Row
+        fullWidth
+        justifyContent="space-between"
+        sx={{ marginBlock: theme.spacing(3) }}
+      >
         <Typography variant="h5">Hourly Forcast</Typography>
         <Typography variant="h5">DropDown</Typography>
       </Row>
@@ -58,11 +68,16 @@ const HourlyWeatherForcast = () => {
           enableBorder
           sx={{ minHeight: "60px" }}
           fullWidth
-          justifyContent='center'
+          justifyContent="center"
         >
           <Row fullWidth fullHeight justifyContent="space-between">
-            <Row columnGap={theme.customSpacing[100]}>
-              {/* <CustomImage logo={partlyCloud} /> */}
+            <Row
+              fullHeight
+              fullWidth
+              columnGap={theme.customSpacing[100]}
+              sx={{ flex: 1 }}
+            >
+              <CustomImage logo={partlyCloud} sx={{ width: 40 }} />
               <Typography variant="h5">{obj.time}</Typography>
             </Row>
             <Typography variant="h5">{obj.temp}</Typography>

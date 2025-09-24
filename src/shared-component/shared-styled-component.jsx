@@ -24,6 +24,7 @@ export const Column = styled(Box)(
 export const Row = styled(Box)(
   ({
     columnGap,
+    rowGap,
     theme,
     alignItems = "center",
     justifyContent = "flex-start",
@@ -35,7 +36,8 @@ export const Row = styled(Box)(
     display: flex;
     flex-direction: row;
     column-gap: ${columnGap ?? theme.customSpacing?.[50] ?? theme.spacing(2)};
-      width: ${width ?? (fullWidth ? "100%" : "fit-content")};
+    row-gap: ${rowGap ?? theme.customSpacing?.[50] ?? theme.spacing(2)};
+    width: ${width ?? (fullWidth ? "100%" : "fit-content")};
     height: ${fullHeight ? "100%" : "fit-content"};
     flex-wrap: ${flexWrap};
     align-items: ${alignItems};

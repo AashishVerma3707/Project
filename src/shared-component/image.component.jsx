@@ -1,10 +1,19 @@
 import { Box } from "@mui/material";
 
-const CustomImage = ({ logo }) => {
+const CustomImage = ({ logo, sx }) => {
   return (
-    <Box>
-      <img src={logo} alt="Sunny" style={{ width: "100%", height: "100%" }} />
+    <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+      <img
+        src={logo}
+        alt="Weather Icon"
+        style={{
+          maxHeight: '100%',
+          maxWidth: '100%',
+          objectFit: 'contain',
+        }}
+      />
     </Box>
   );
 };
+
 export default CustomImage;

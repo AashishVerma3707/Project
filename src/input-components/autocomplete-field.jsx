@@ -24,10 +24,12 @@ const AutocompleteField = ({
   const CustomPaper = forwardRef(function CustomPaper(props, ref) {
     return (
       <PrimaryContainer
+        fullWidth
         ref={ref}
         {...props}
         alignItems="stretch"
         sx={{
+          maxHeight: "250px",
           color: theme.palette.neutral[0],
           marginBlock: theme.spacing(10),
           "& .MuiAutocomplete-listbox": {
@@ -133,7 +135,7 @@ const AutocompleteField = ({
             }}
           >
             {selected ? (
-              <SecondaryContainer sx={{ paddingBlock: theme.spacing(3) }}>
+              <SecondaryContainer sx={{ paddingBlock: theme.spacing(3) }} fullWidth>
                 <CustomOption option={option} />
               </SecondaryContainer>
             ) : (

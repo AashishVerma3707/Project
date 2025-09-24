@@ -8,7 +8,6 @@ import theme from "../../theme";
 import CustomImage from "../../shared-component/image.component";
 import partlyCloud from "../../assets/images/icon-partly-cloudy.webp";
 
-
 const DailyWeatherForcast = () => {
   const wholeWeekForcast = [
     {
@@ -47,6 +46,7 @@ const DailyWeatherForcast = () => {
       minTemp: "15°",
     },
   ];
+
   const IndividualBox = ({ tempData }) => {
     const { day = "", maxTemp = "", minTemp = "" } = tempData;
     return (
@@ -56,8 +56,9 @@ const DailyWeatherForcast = () => {
           flex: 1,
           padding: theme.spacing(6),
           minWidth: "95px",
-          maxWidth: "103px",
           maxHeight: "165px",
+          maxWidth: "105px",
+          borderRadius: theme.radius[12],
         }}
         fullHeight
         enableBorder
@@ -66,10 +67,10 @@ const DailyWeatherForcast = () => {
           fullWidth
           fullHeight
           alignItems="center"
-          justifyContent="space-between"
+          justifyContent="stretch"
         >
           <Typography variant="h6">{day}</Typography>
-          <CustomImage logo={partlyCloud}/>
+          <CustomImage logo={partlyCloud} />
           <Row fullWidth justifyContent="space-between">
             <Typography variant="h6">{maxTemp}</Typography>
             <Typography variant="h7">{minTemp}</Typography>
@@ -78,13 +79,15 @@ const DailyWeatherForcast = () => {
       </PrimaryContainer>
     );
   };
+
   return (
     <Column rowGap={theme.customSpacing[250]}>
       <Typography variant="h5">Daily forecast</Typography>
       <Row
         columnGap={theme.customSpacing[200]}
         sx={{ width: "41vw", flex: 2, minHeight: "165px" }}
-        rowGap={theme.customSpacing[250]}
+        justifyContent="stretch"
+        rowGap={theme.spacing(7)}
       >
         {wholeWeekForcast.map((obj) => {
           return <IndividualBox tempData={obj} />;

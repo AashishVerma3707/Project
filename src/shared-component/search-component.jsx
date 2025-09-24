@@ -58,7 +58,7 @@ const SearchBox = () => {
           loading={isLoading}
           options={options}
           onValueChange={onValueChange}
-          sx={{ maxWidth: "26vw" }}
+          sx={{ maxWidth: "525px" }}
         />
       </Row>
       <Row sx={{ flex: 2.4 }} fullHeight>

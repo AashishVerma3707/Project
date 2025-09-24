@@ -14,14 +14,17 @@ const WeatherDetail = () => {
       justifyContent="center"
       sx={{
         flex: 1,
-        // padding: theme.customSpacing[250],
-        maxWidth: "180px",
         minWidth: "120px",
+        maxWidth: "190px",
+        borderRadius: theme.radius[12],
       }}
       fullHeight
       enableBorder
     >
-      <Column  sx={{height:'85%', width:'85%'}} justifyContent='space-between'>
+      <Column
+        sx={{ height: "85%", width: "85%" }}
+        justifyContent="space-between"
+      >
         <Typography variant="h6">{title}</Typography>
         <Typography variant="h3">{data}</Typography>
       </Column>
@@ -31,6 +34,7 @@ const WeatherDetail = () => {
   return (
     <Row
       columnGap={theme.customSpacing[250]}
+      justifyContent="stretch"
       sx={{
         width: "41vw",
         flex: 2,
