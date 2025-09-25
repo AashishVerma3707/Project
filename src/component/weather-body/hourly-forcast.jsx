@@ -8,6 +8,7 @@ import {
 import theme from "../../theme";
 import CustomImage from "../../shared-component/image.component";
 import partlyCloud from "../../assets/images/icon-partly-cloudy.webp";
+import { getDay } from "../../utils/weather.utils";
 
 const HourlyWeatherForcast = ({ weatherData }) => {
   return (
@@ -32,10 +33,10 @@ const HourlyWeatherForcast = ({ weatherData }) => {
       </Row>
       <Column
         fullWidth
-        sx={{ maxHeight: "90%", overflow: "auto", scrollbarWidth:'none' }}
+        sx={{ maxHeight: "90%", overflow: "auto", scrollbarWidth: "none" }}
         rowGap={theme.customSpacing[200]}
       >
-        {weatherData["Thursday"].map((obj) => (
+        {weatherData[getDay()]?.map((obj) => (
           <SecondaryContainer
             darkerShade
             enableBorder
