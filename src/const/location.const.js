@@ -1,3 +1,4 @@
+
 export const Location = [
   { label: "Delhi", inputValue: "delhi" },
   { label: "Mumbai", inputValue: "mumbai" },
@@ -21,3 +22,4 @@ export const Location = [
   { label: "Coimbatore", inputValue: "coimbatore" },
   { label: "Mysuru", inputValue: "mysuru" },
 ];
+

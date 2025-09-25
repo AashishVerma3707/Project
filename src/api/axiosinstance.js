@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
+export const locationAxiosInstance = axios.create({
   baseURL: "https://geocoding-api.open-meteo.com/v1",
 });
 
-export default axiosInstance;
+export const weatherAxiosInstance = axios.create({
+  baseURL: "https://api.open-meteo.com/v1/",
+});

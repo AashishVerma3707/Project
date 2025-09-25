@@ -14,6 +14,7 @@ const SearchBox = () => {
   const [options, setOptions] = useState([]);
   const debouncedInputValue = useDebounce(inputValue);
   const setLocation = zustandStore((state) => state.setLocation);
+
   const param = {
     name: debouncedInputValue,
     count: 20,
@@ -39,12 +40,15 @@ const SearchBox = () => {
       setOptions(fetchedLocation);
     }
   }, [data]);
+
   const handleInputChange = (inputValue) => {
     setInputValue(inputValue);
   };
+
   const onValueChange = (value) => {
     setLocation(value);
   };
+
   return (
     <Row
       columnGap={theme.customSpacing[200]}

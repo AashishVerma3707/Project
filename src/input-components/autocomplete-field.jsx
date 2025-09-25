@@ -99,6 +99,7 @@ const AutocompleteField = ({
               >
                 {searchField && <SearchIcon />}
                 <InputBase
+                  id="autocomplete-text-input"
                   {...params.inputProps}
                   placeholder="Search for a place..."
                   inputProps={{
@@ -135,7 +136,10 @@ const AutocompleteField = ({
             }}
           >
             {selected ? (
-              <SecondaryContainer sx={{ paddingBlock: theme.spacing(3) }} fullWidth>
+              <SecondaryContainer
+                sx={{ paddingBlock: theme.spacing(3) }}
+                fullWidth
+              >
                 <CustomOption option={option} />
               </SecondaryContainer>
             ) : (
@@ -150,8 +154,10 @@ const AutocompleteField = ({
         setValue(newValue);
         onValueChange(newValue);
       }}
-      onInputChange={(_, newInputValue) => {
-        onInputChange(newInputValue);
+      onInputChange={(_, newInputValue, reason) => {
+        if (reason === "input") {
+          onInputChange(newInputValue);
+        }
       }}
     />
   );

@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import {
+  Column,
   PrimaryContainer,
   Row,
   SecondaryContainer,
@@ -8,47 +9,14 @@ import theme from "../../theme";
 import CustomImage from "../../shared-component/image.component";
 import partlyCloud from "../../assets/images/icon-partly-cloudy.webp";
 
-const HourlyWeatherForcast = () => {
-  const hourlyWeatherData = [
-    {
-      time: "3 pm",
-      temp: "20°",
-    },
-    {
-      time: "4 pm",
-      temp: "20°",
-    },
-    {
-      time: "5 pm",
-      temp: "20°",
-    },
-    {
-      time: "6 pm",
-      temp: "20°",
-    },
-    {
-      time: "7 pm",
-      temp: "20°",
-    },
-    {
-      time: "8 pm",
-      temp: "20°",
-    },
-    {
-      time: "9 pm",
-      temp: "20°",
-    },
-    {
-      time: "10 pm",
-      temp: "20°",
-    },
-  ];
+const HourlyWeatherForcast = ({ weatherData }) => {
   return (
     <PrimaryContainer
       sx={{
         width: "20vw",
         maxHeight: "695px",
         maxWidth: "385px",
+        minWidth: "343px",
         padding: theme.customSpacing[250],
         borderRadius: theme.radius[20],
       }}
@@ -62,28 +30,34 @@ const HourlyWeatherForcast = () => {
         <Typography variant="h5">Hourly Forcast</Typography>
         <Typography variant="h5">DropDown</Typography>
       </Row>
-      {hourlyWeatherData.map((obj) => (
-        <SecondaryContainer
-          darkerShade
-          enableBorder
-          sx={{ minHeight: "60px" }}
-          fullWidth
-          justifyContent="center"
-        >
-          <Row fullWidth fullHeight justifyContent="space-between">
-            <Row
-              fullHeight
-              fullWidth
-              columnGap={theme.customSpacing[100]}
-              sx={{ flex: 1 }}
-            >
-              <CustomImage logo={partlyCloud} sx={{ width: 40 }} />
-              <Typography variant="h5">{obj.time}</Typography>
+      <Column
+        fullWidth
+        sx={{ maxHeight: "90%", overflow: "auto", scrollbarWidth:'none' }}
+        rowGap={theme.customSpacing[200]}
+      >
+        {weatherData["Thursday"].map((obj) => (
+          <SecondaryContainer
+            darkerShade
+            enableBorder
+            sx={{ minHeight: "60px" }}
+            fullWidth
+            justifyContent="center"
+          >
+            <Row fullWidth fullHeight justifyContent="space-between">
+              <Row
+                fullHeight
+                fullWidth
+                columnGap={theme.customSpacing[100]}
+                sx={{ flex: 1 }}
+              >
+                <CustomImage logo={partlyCloud} sx={{ width: 40 }} />
+                <Typography variant="h5">{obj?.time}</Typography>
+              </Row>
+              <Typography variant="h5">{obj?.temperature}</Typography>
             </Row>
-            <Typography variant="h5">{obj.temp}</Typography>
-          </Row>
-        </SecondaryContainer>
-      ))}
+          </SecondaryContainer>
+        ))}
+      </Column>
     </PrimaryContainer>
   );
 };

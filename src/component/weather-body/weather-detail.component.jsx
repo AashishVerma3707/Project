@@ -6,7 +6,7 @@ import {
 } from "../../shared-component/shared-styled-component";
 import theme from "../../theme";
 
-const WeatherDetail = () => {
+const WeatherDetail = ({ weatherData }) => {
   const IndividualWeatherDetailBox = ({ title, data }) => (
     <PrimaryContainer
       rowGap={theme.customSpacing[300]}
@@ -14,9 +14,10 @@ const WeatherDetail = () => {
       justifyContent="center"
       sx={{
         flex: 1,
-        minWidth: "120px",
-        maxWidth: "190px",
+        minWidth: "165px",
+        maxWidth: "185px",
         borderRadius: theme.radius[12],
+        height: "120px",
       }}
       fullHeight
       enableBorder
@@ -35,16 +36,15 @@ const WeatherDetail = () => {
     <Row
       columnGap={theme.customSpacing[250]}
       justifyContent="stretch"
+      rowGap={theme.customSpacing[300]}
       sx={{
         width: "41vw",
         flex: 2,
-        minHeight: "120px",
       }}
     >
-      <IndividualWeatherDetailBox title="Feels Like" data={20} />
-      <IndividualWeatherDetailBox title="Humidity" data="46%" />
-      <IndividualWeatherDetailBox title="Wind" data="14 Km/h" />
-      <IndividualWeatherDetailBox title="Precipitation" data="0 mm" />
+      {weatherData.map((obj) => (
+        <IndividualWeatherDetailBox title={obj.label} data={obj.value} />
+      ))}
     </Row>
   );
 };
