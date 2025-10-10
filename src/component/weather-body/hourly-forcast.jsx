@@ -8,9 +8,15 @@ import {
 import theme from "../../theme";
 import CustomImage from "../../shared-component/image.component";
 import partlyCloud from "../../assets/images/icon-partly-cloudy.webp";
-import { getDay } from "../../utils/weather.utils";
+import { useState } from "react";
+import PositionedMenu from "../../input-components/select-menu";
 
 const HourlyWeatherForcast = ({ weatherData }) => {
+  const daysOption = Object.keys(weatherData);
+  const [currentDay, setCurrentDay] = useState(daysOption[0]);
+  const handleSelectDay = (dayObj) => {
+    setCurrentDay(dayObj);
+  };
   return (
     <PrimaryContainer
       sx={{
@@ -29,14 +35,18 @@ const HourlyWeatherForcast = ({ weatherData }) => {
         sx={{ marginBlock: theme.spacing(3) }}
       >
         <Typography variant="h5">Hourly Forcast</Typography>
-        <Typography variant="h5">DropDown</Typography>
+        <PositionedMenu
+          menuOption={daysOption}
+          buttonLabel={currentDay}
+          handleSelect={(dayObj) => handleSelectDay(dayObj)}
+        />
       </Row>
       <Column
         fullWidth
         sx={{ maxHeight: "90%", overflow: "auto", scrollbarWidth: "none" }}
         rowGap={theme.customSpacing[200]}
       >
-        {weatherData[getDay()]?.map((obj) => (
+        {weatherData[currentDay]?.map((obj) => (
           <SecondaryContainer
             darkerShade
             enableBorder
@@ -44,7 +54,7 @@ const HourlyWeatherForcast = ({ weatherData }) => {
             fullWidth
             justifyContent="center"
           >
-            <Row fullWidth fullHeight justifyContent="space-between">
+            <Row fullWidth fullHeight justifyContent="space-between" draggable>
               <Row
                 fullHeight
                 fullWidth
