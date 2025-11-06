@@ -1,14 +1,15 @@
-import { AppPage } from "../shared-component/shared-styled-component";
+import { Column } from "../shared-component/shared-styled-component";
 import theme from "../theme";
 import WeatherBody from "./weather-body/weather-body-main.component";
 import WeatherHeader from "./weather-header/weather-header.component";
 
 const WeatherMain = () => {
   return (
-    <AppPage alignItems="center" rowGap={theme.customSpacing[500]}>
+    <Column fullWidth alignItems="center" rowGap={theme.customSpacing[500]}>
+      
       <WeatherHeader />
       <WeatherBody />
-    </AppPage>
+    </Column>
   );
 };
 

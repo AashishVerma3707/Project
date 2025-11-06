@@ -55,7 +55,7 @@ export const AppPage = styled(Column)(
     min-height:fit-content;
     overflow:scroll;
     padding: ${theme.customSpacing?.[400] ?? theme.spacing(5)};
-    background-color: ${theme.palette.primary.main};
+    background-color: ${theme.palette.neutral[900]};
     box-sizing: border-box;
     padding-inline: ${theme.customSpacing[1400]};
     scrollBar-width:none;

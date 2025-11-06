@@ -2,9 +2,11 @@ import { createTheme } from "@mui/material";
 
 const theme = createTheme({
   spacing: 2,
+
   palette: {
+    mode: "dark",
     primary: {
-      main: "hsl(243, 96%, 9%)",
+      main: "hsl(233, 67%, 56%)",
     },
     secondary: {
       main: "hsl(233, 67%, 56%)",
