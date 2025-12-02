@@ -1,8 +1,12 @@
-import { locationAxiosInstance, weatherAxiosInstance } from "./axiosinstance";
+import { apiPaths } from "./api-routes";
+import { locationAxiosInstance } from "./locationAxiosInstance";
+import weatherAxiosInstance from "./weatherAxiosInstance";
 
 export const getLocation = async (params) => {
   try {
-    const res = await locationAxiosInstance.get("/search", { params });
+    const res = await locationAxiosInstance.get(apiPaths.getLocation, {
+      params,
+    });
     return res?.data;
   } catch (error) {
     console.error("Error fetching dataset:", error);
@@ -12,10 +16,15 @@ export const getLocation = async (params) => {
 
 export const getWeather = async (params) => {
   try {
-    const res = await weatherAxiosInstance.get("/forecast", { params });
+    const res = await weatherAxiosInstance.get(
+      apiPaths.getFirebaseWeatherData,
+      {
+        params,
+      }
+    );
     return res?.data;
   } catch (error) {
-    console.error("Error fetching dataset:", error);
+    console.error("Error fetching dataset:", error);  
     throw error;
   }
 };

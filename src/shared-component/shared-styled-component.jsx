@@ -1,4 +1,5 @@
 import { Box, styled } from "@mui/material";
+import currentTempBgImage from "../assets/images/bg-today-large.svg";
 
 export const Column = styled(Box)(
   ({
@@ -92,3 +93,13 @@ export const SecondaryContainer = styled(PrimaryContainer)(
     };
   `
 );
+
+export const withBackground = (BaseComponent) =>
+  styled(BaseComponent)(
+    ({ bg = currentTempBgImage }) => `
+        background-image: url(${bg});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+  `
+  );

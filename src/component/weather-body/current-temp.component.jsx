@@ -2,22 +2,21 @@ import {
   Column,
   PrimaryContainer,
   Row,
+  withBackground,
 } from "../../shared-component/shared-styled-component";
 import sunLogo from "../../assets/images/icon-sunny.webp";
-import currentTempBgImage from "../../assets/images/bg-today-large.svg";
 
 import { Box, Typography } from "@mui/material";
 import theme from "../../theme";
 
 const CurrentTempComponent = ({ weatherData }) => {
   if (!weatherData) return;
+
+  const CurrentWeatherCard = withBackground(PrimaryContainer);
+
   return (
-    <PrimaryContainer
+    <CurrentWeatherCard
       sx={{
-        backgroundImage: `url(${currentTempBgImage})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
         width: "41vw",
         minHeight: "280px",
         flex: 5,
@@ -46,7 +45,7 @@ const CurrentTempComponent = ({ weatherData }) => {
           <Typography variant="h1">{weatherData.temperature}</Typography>
         </Row>
       </Row>
-    </PrimaryContainer>
+    </CurrentWeatherCard>
   );
 };
 

@@ -29,7 +29,7 @@ const SignInForm = () => {
   };
 
   return (
-    <FormProvider>
+    <FormProvider {...formMethodOnChange}>
       Sign-in
       <Column rowGap={theme.customSpacing[300]} alignItems="flex-end">
         <TextField
@@ -61,7 +61,6 @@ const SignInForm = () => {
         <Button
           type="submit"
           variant="contained"
-          color="secondary"
           onClick={handleSubmit(onSubmit)}
         >
           Submit

@@ -9,11 +9,8 @@ const AuthForm = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const isSignIn = useMatch(authRoute.signIn);
   let navigate = useNavigate();
-  // const setUser = zustandStore((state) => state.setUser);
 
   const handleAuthentication = (user) => {
-    // setUser(user);
-    console.log(user);
     navigate(AppRoute.home);
   };
 

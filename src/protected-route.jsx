@@ -11,11 +11,11 @@ import { AuthState } from "./const/auth.cons";
 const ProtectedApp = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(AuthState.loading);
   const setUser = zustandStore((state) => state.setUser);
-
+  
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setIsAuthenticated(AuthState.authenticated);
+        setIsAuthenticated(AuthState.authenticated); 
         setUser(user);
       } else {
         setIsAuthenticated(AuthState.unauthenticated);

@@ -21,13 +21,16 @@ const SignUpForm = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        handleAuthentication(user);
-        updateProfile(auth.currentUser, {
+        updateProfile(user, {
           displayName,
           //   photoURL: "https://example.com/jane-q-user/profile.jpg",
-        }).catch((error) => {
-          setErrorMessage(getReadableError(error.code));
-        });
+        })
+          .then(() => {
+            handleAuthentication(user);
+          })
+          .catch((error) => {
+            setErrorMessage(getReadableError(error.code));
+          });
       })
       .catch((error) => {
         // const errorCode = error.code;
@@ -42,9 +45,8 @@ const SignUpForm = () => {
         <TextField
           variant="outlined"
           label="Name"
-          name="displayName"
           error={!!errors.displayName}
-          {...register("name", {
+          {...register("displayName", {
             required: "Name is Required",
           })}
         />

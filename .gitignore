@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+#firebase functions
+/functions
+firebase.json
+.firebaserc
 #environment
 .env
 
